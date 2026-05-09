@@ -1,4 +1,4 @@
-const API_KEY = "fHtloK8eldsF4G9FqvKd8sGkMGJAbUYAi6X+q95LLco=";
+const API_KEY = "APIKEY";
 const API_URL = "http://127.0.0.1:31270";
 
 let lastAPIResponse = null;
