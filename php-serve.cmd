@@ -1,0 +1,1 @@
+php.exe -S 0.0.0.0:80 -t "D:\Games\Train Sim World 6\timtim"

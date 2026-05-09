@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSW TIMTIM Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import "assets/css/timtim.css";
+    </style>
+    <script src="assets/data/data.js"></script>
+
+    <script src="assets/script/api.js"></script>
+    <script src="assets/script/coasting.js"></script>
+    <script src="assets/script/geo.js"></script>
+    <script src="assets/script/service.js"></script>
+    <script src="assets/script/utils.js"></script>
+
+    <script src="assets/script/timtim.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <span id="formation">GEEN VERBINDING</span>
+      <div class="currentSpeedLimit">
+        <img src="assets/img/speed.png" alt="" style="height: 10pt" />
+        <span id="currentSpeedLimit">?</span>
+      </div>
+      <div class="worldTime"><span id="worldTime">???</span></div>
+    </div>
+    <div class="trackMonitor">
+      <div class="track">
+        <div class="history"></div>
+        <div class="signal" id="signal-1"></div>
+        <div class="signal" id="signal-2"></div>
+        <div class="signal" id="signal-3"></div>
+        <div class="signal" id="signal-4"></div>
+        <div class="signal" id="signal-5"></div>
+        <div class="signal" id="signal-6"></div>
+        <div class="signal" id="signal-7"></div>
+        <div class="signal" id="signal-8"></div>
+        <div class="signal" id="signal-9"></div>
+        <div class="signal" id="signal-10"></div>
+        <div class="signal" id="signal-11"></div>
+        <div class="poi" style="bottom: -50px" id="poi_Zl">Zl</div>
+        <div class="poi" style="bottom: -50px" id="poi_Ddv">Ddv</div>
+        <div class="poi" style="bottom: -50px" id="poi_Mp">Mp</div>
+        <div class="poi" style="bottom: -50px" id="poi_Mpa">Mpa</div>
+        <div class="poi" style="bottom: -50px" id="poi_Kg">Kg</div>
+        <div class="poi" style="bottom: -50px" id="poi_Hgv">Hgv</div>
+        <div class="poi" style="bottom: -50px" id="poi_Vama">Vama</div>
+        <div class="poi" style="bottom: -50px" id="poi_Bl">Bl</div>
+        <div class="poi" style="bottom: -50px" id="poi_Asn">Asn</div>
+        <div class="poi" style="bottom: -50px" id="poi_Onz">Onz</div>
+        <div class="poi" style="bottom: -50px" id="poi_Onn">Onn</div>
+        <div class="poi" style="bottom: -50px" id="poi_Hrn">Hrn</div>
+        <div class="poi" style="bottom: -50px" id="poi_Gnl">Gnl</div>
+        <div class="poi" style="bottom: -50px" id="poi_Gerp">Gerp</div>
+        <div class="poi" style="bottom: -50px" id="poi_Gn">Gn</div>
+      </div>
+      <div class="self" id="runningNumber">???</div>
+    </div>
+    <div class="legInfo">
+      <div class="nextLegDetails box">
+        <div class="nextLeg line">
+          <b id="lastTarget">?</b>
+          <img
+            src="./assets/img/leg_arrow.png?"
+            style="
+              height: 0.625em;
+              padding-top: 0.325em;
+              padding-bottom: 0.125em;
+              margin-left: 0.5em;
+              margin-right: 0.5em;
+            "
+            alt="arrow"
+          />
+          <b id="nextTarget">?</b>
+        </div>
+        <div class="nextTargetTiming line">
+          <div id="nextTargetAction">A</div>
+          <span id="nextTargetETA">???</span>
+        </div>
+        <div class="nextTargetArrivalInfo line">
+          <span>Spoor <span id="nextTargetTrack">?</span></span>
+          <div
+            class="nextTargetStopMarker"
+            style="display: flex; align-items: center"
+          >
+            <img
+              src="assets/img/stop_mark.png"
+              style="width: 1.5em; height: 1.5em"
+              alt="stop"
+            />
+            <b
+              id="stopTargetLengthSign"
+              style="padding-bottom: 0.075em; padding-left: 0.25em"
+              >?</b
+            >
+          </div>
+          <span id="nextTargetDistance">? km</span>
+        </div>
+      </div>
+      <div
+        class="runningData box"
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        "
+      >
+        <div
+          class="runningETA"
+          style="width: 150px; height: 100%; text-align: center"
+        >
+          <span>Volgende station</span>
+          <div class="circle">
+            <span id="runningETA">?</span>
+          </div>
+        </div>
+        <div
+          class="runningTargetTiming"
+          style="
+            width: 150px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-left: 1px solid #aaa;
+          "
+        >
+          <span class="targetlabel" style="text-align: center">
+            Tijd tot <br /><span id="targetActionLabel">aankomst</span>
+          </span>
+          <div class="clock">
+            <img
+              src="assets/img/clock.png"
+              alt="clock"
+              style="height: 2.5em; padding: 0.75em"
+            />
+          </div>
+          <span id="TargetETA">???</span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/script/init.js"></script>
+</html>
