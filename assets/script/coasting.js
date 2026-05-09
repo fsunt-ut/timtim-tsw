@@ -19,6 +19,12 @@ function calculateCoastingTime(v0, xf, vehicleType = "SNG3-6") {
     C = 3e-5;
     D = -0.0668;
     E = 40.065;
+  } else if (vehicleType == "SNG3-3") {
+    A = -1e-11;
+    B = 2e-8;
+    C = 3e-5;
+    D = -0.0668;
+    E = 40.065;
   } else if (vehicleType == "ICMm3-3") {
     A = 0; // No 4th degree term
     B = -7e-8;

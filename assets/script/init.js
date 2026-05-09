@@ -13,11 +13,13 @@ const buildTrainData = async () => {
   UI_stopTargetLengthSign.textContent = trainLength;
 };
 
+APISetup();
+API_TICK();
 buildTrainData();
 
-const tick = () => {
+const UI_TICK = () => {
   API_TICK();
   buildUIData();
 };
 
-setInterval(tick, 1000);
+setInterval(UI_TICK, 1000);

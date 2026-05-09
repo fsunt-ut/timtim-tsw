@@ -30,15 +30,11 @@ const APISetup = () => {
   });
 };
 
-APISetup();
-
 const API_TICK = () => {
   CALL_API("/subscription/?Subscription=1").then((response) => {
     lastAPIResponse = response;
   });
 };
-
-API_TICK();
 
 async function CALL_API(endpoint, method = "GET", body = null) {
   const headers = {
