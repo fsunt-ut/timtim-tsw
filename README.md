@@ -1,4 +1,5 @@
 # TIMTIM-like Interface as used by NS for Zwolle-Groningen DLC of Train Sim World
+NS TIMTIM Interface for Zwolle-Groningen DLC of Train Sim World
 ## Prerequisites
 - TSW6 Build 493 (API 1.5)
 - Zwolle-Groningen route DLC
