@@ -14,7 +14,9 @@ const buildUIData = async () => {
     nextStopIndex = Math.min(nextStopIndex + 1, stopList.length - 1);
   }
 
-  const speed = callAPI("/get/CurrentDrivableActor.Function.HUD_GetSpeed");
+  const speed = await callAPI(
+    "/get/CurrentDrivableActor.Function.HUD_GetSpeed",
+  );
 
   const stationary = await atStation(stopList[nextStopIndex].poi);
 
@@ -46,7 +48,7 @@ const buildUIData = async () => {
     nextTarget,
   );
 
-  const nextSignalData = callAPI("/get/DriverAid.Data");
+  const nextSignalData = await callAPI("/get/DriverAid.Data");
 
   let rolloutAccuracyStr = "...";
   if (!stationary) {

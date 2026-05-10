@@ -1,10 +1,10 @@
 const getSpeedLimit = async () => {
-  const speedLimitData = callAPI("/get/DriverAid.Data");
+  const speedLimitData = await callAPI("/get/DriverAid.Data");
   return Math.floor(speedLimitData.Values.speedLimit.value * 3.6);
 };
 
 const getPlayerLatLon = async () => {
-  const formationLatLon = callAPI("/get/CurrentFormation/0.LatLon");
+  const formationLatLon = await callAPI("/get/CurrentFormation/1.LatLon");
 
   const location = {
     lat: formationLatLon.Values.Lat,
@@ -15,7 +15,7 @@ const getPlayerLatLon = async () => {
 };
 
 const getWorldTime = async () => {
-  const worldTimeData = callAPI("/get/TimeOfDay.Data");
+  const worldTimeData = await callAPI("/get/TimeOfDay.Data");
 
   const worldTimeISO8601 = worldTimeData.Values.WorldTimeISO8601;
   const worldDT = new Date(worldTimeISO8601);

@@ -44,7 +44,9 @@ const passedStop = async (poi) => {
 };
 
 const isStationary = async () => {
-  const speedData = callAPI("/get/CurrentDrivableActor.Function.HUD_GetSpeed");
+  const speedData = await callAPI(
+    "/get/CurrentDrivableActor.Function.HUD_GetSpeed",
+  );
   return Math.floor(Math.abs(speedData.Values["Speed (ms)"])) < 1;
 };
 

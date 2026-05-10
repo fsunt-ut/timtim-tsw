@@ -1,15 +1,15 @@
 const coastingAccuracyCompensation = {
   Gn: 0,
   Gerp: 0,
-  Hrn: 5,
-  Asn: 25,
-  Bl: 5,
+  Hrn: 20,
+  Asn: 45,
+  Bl: 20,
   Hgv: 15,
-  Mp: 20,
-  Zl: 45,
+  Mp: 45,
+  Zl: 75,
 };
 
-function calculateCoastingTime(v0, xf, vehicleType = "SNG3-6") {
+const calculateCoastingTime = (v0, xf, vehicleType) => {
   let A, B, C, D, E;
 
   // --- Assign Constants Based on Vehicle Type ---
@@ -29,13 +29,13 @@ function calculateCoastingTime(v0, xf, vehicleType = "SNG3-6") {
     A = 0; // No 4th degree term
     B = -7e-8;
     C = 0.0001;
-    D = -0.0705;
+    D = -0.0905;
     E = 40.331;
   } else if (vehicleType == "ICMm3-6") {
     A = 0; // No 4th degree term
     B = -7e-8;
     C = 0.0001;
-    D = -0.075;
+    D = -0.0755;
     E = 40.331;
   } else {
     return Infinity;
@@ -86,16 +86,9 @@ function calculateCoastingTime(v0, xf, vehicleType = "SNG3-6") {
 
   // --- STEP 5: Calculate final coasting time ---
   return tf - t0;
-}
+};
 
 const estimateRolloutAccuracy = (d, vi, eta, trainType, stop) => {
-  // const c1 = 0.03;
-  // const c2 = c1 * 2;
-
-  // const vf =
-  //   (308.575 - Math.sqrt(Math.pow(308.575 - c1 * vi, 2) + c2 * d)) / c1;
-  // const time = c1 * (vf - vi) - 308.575 * Math.log(vf / vi);
-
   const time = calculateCoastingTime(vi, d, trainType);
-  return time - eta + 30 + coastingAccuracyCompensation[stop];
+  return time - eta + coastingAccuracyCompensation[stop];
 };
